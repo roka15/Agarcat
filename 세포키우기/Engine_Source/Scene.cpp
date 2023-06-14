@@ -1,5 +1,6 @@
 #include "Scene.h"
 #include "RokaRectangle.h"
+#include "RokaEllipse.h"
 #include "RokaTime.h"
 roka::Scene::Scene() :mObjectMaxSize(3), mItemMaxCount(mObjectMaxSize * 5)
 {
@@ -25,6 +26,10 @@ void roka::Scene::Initialize()
 		obj->Initialize();
 		AddGameObject(obj);
 	}
+
+	GameObject* player = new RokaEllipse(EGameObjectType::Player);
+	player->Initialize();
+	AddGameObject(player);
 }
 
 void roka::Scene::Update()

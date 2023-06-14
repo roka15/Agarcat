@@ -56,6 +56,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)RokaRectangle.cpp">
       <Filter>GameObject</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)RokaEllipse.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)RokaEngine.h">
@@ -123,6 +126,9 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Layer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)RokaRectangle.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)RokaEllipse.h">
       <Filter>GameObject</Filter>
     </ClInclude>
   </ItemGroup>

@@ -45,9 +45,13 @@ namespace roka
 		void SetCenter(const Vector2& center) { mCenter = center; }
 		const Vector2& GetCenter() { return mCenter; }
 		void SetLength(const float& length) { mLength = length; }
-		const UINT& GetLength() { return mLength; }
+		const float& GetLength() { return mLength; }
 		const EState& GetState() { return mState; }
 		void SetState(EState state) { mState = state; }
+		std::vector<Vertex>& GetVertexs() { return mVertexs; }
+		std::vector<UINT>& GetIndexs() { return mIndexs; }
+		const Vector4& GetCurPosDiff() { return mCurPosValue; }
+
 		Vector2 ConvertGPUPos(Vector2 value);
 		
 		virtual bool InitCheckCollision();
@@ -56,18 +60,19 @@ namespace roka
 		const EGameObjectType& GetType() { return mType; }
 	
 	protected:
+		virtual void SetBufferInfo(std::vector<Vertex>& vertexs, std::vector<UINT>& indexs);
 		virtual void LoadBuffer();
 		virtual void LoadShader();
 		virtual void SetupState();
+		virtual void AddLength(float size);
 		Color GetRandomColor();
-		std::vector<Vertex>& GetVertexs() { return mVertexs; }
-		std::vector<UINT>& GetIndexs() { return mIndexs; }
+	
 		const Vector2& GetDir() { return mDir; }
 		void SetDir(const Vector2& dir) { mDir = dir; }
-		const Vector4& GetCurPosDiff() { return mCurPosValue; }
+		
 		Mesh* GetMesh() { return mMesh; }
 		Shader* GetShader() { return mShader; }
-		virtual void AddLength(float size);
+		
 	private:
 		EState mState;
 		Mesh* mMesh;

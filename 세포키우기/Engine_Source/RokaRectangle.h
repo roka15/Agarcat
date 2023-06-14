@@ -17,6 +17,7 @@ namespace roka
         virtual GameObject* CheckCollision(ECollisionDirType& dirType)override;
         virtual EMapOutType CheckMapOut()override;
     protected:
+        virtual void SetBufferInfo(std::vector<Vertex>& vertexs, std::vector<UINT>& indexs)override;
         virtual void LoadBuffer()override;
         virtual void LoadShader()override;
         virtual void SetupState()override;
